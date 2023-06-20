@@ -9,3 +9,6 @@
 !run_all_tests.sh
 !setup.py
 !starter.py
+
+#Blacklist specifics
+**/__pycache__
