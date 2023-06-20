@@ -1,5 +1,5 @@
 #! /bin/bash
-cd $(dirname $0) || exit
+cd "$(dirname "$0")" || exit 1
 
 container_name="testcontainer"
 image_name="testimage"

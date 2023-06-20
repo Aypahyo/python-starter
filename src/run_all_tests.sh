@@ -1,5 +1,5 @@
 #! /bin/bash
-cd $(dirname $0)
+cd "$(dirname "$0")" || exit 1
 
 echo running unit tests...
 python3 -m unittest discover -s tests -p *_unit.py
