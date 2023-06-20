@@ -13,8 +13,12 @@ exit_status_behave=$?
 
 # if any eit status is not 0, exit with 1
 if [ $exit_status_unit -ne 0 ] || [ $exit_status_component -ne 0 ] || [ $exit_status_behave -ne 0 ]; then
-    echo "Tests failed"
+    echo "-------------------"
+    echo "Tests failed: unit=$exit_status_unit, component=$exit_status_component, behave=$exit_status_behave"
+    echo "-------------------"
     exit 1
 fi
-echo "Tests passed"
+echo "-------------------"
+echo "Tests passed: unit=$exit_status_unit, component=$exit_status_component, behave=$exit_status_behave"
+echo "-------------------"
 exit 0

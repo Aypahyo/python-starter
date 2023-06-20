@@ -32,3 +32,22 @@ Behave tests are included in the `features` folder, all files ending in `.featur
 ```bash
 python3 -m behave
 ```
+
+### run all tests
+
+There is a script to run all tests.
+Exit code is 0 if all tests pass, 1 otherwise.
+
+```bash
+src/run_all_tests.sh
+```
+
+### run all tests in docker
+
+There is a script to run all tests in docker.
+This also tests installation of the package.
+Exit code is 0 if all tests pass, 1 otherwise.
+
+```bash
+src/run_docker_all_tests.sh
+```
