@@ -1,0 +1,11 @@
+#Blacklist all
+*
+#Whitelist specifics
+!container
+!features
+!starter_core
+!tests
+!requirements.txt
+!run_all_tests.sh
+!setup.py
+!starter.py
