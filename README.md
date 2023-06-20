@@ -6,6 +6,19 @@ This is a starter project for python projects.
 It includes a basic project structure as a starting point.
 
 This starter is ready to be pip installed.
+It includes a `setup.py` file and a `requirements.txt` file.
+It has three types of tests: unittests, component tests and behave tests.
+
+## Template
+
+This project is meant to work like a tempalte.
+I did not build a mechanism to generate a new project from this template.
+In order to find all the places where you need to replace the name of the project, search for `starter` in all files.
+
+```bash
+find . -name "__pycache__" -prune -o -type f -name "*starter*" -print
+grep -r --exclude-dir=__pycache__ --exclude="*.log" --exclude="*.md"  "starter" .
+```
 
 ## Features
 
