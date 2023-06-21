@@ -37,6 +37,7 @@ function run_tests() {
 function run_test_for_install() {
     echo "running..."
     docker run --entrypoint "/bin/bash" --name $container_name $image_name -c "pip install . && starter"
+    local run_exit_status=$?
     docker logs $container_name >> test.sh.log 2>&1
     docker rm -f $container_name >> test.sh.log 2>&1 || true
     if grep -q "Successfully installed" test.sh.log; then
@@ -48,6 +49,16 @@ function run_test_for_install() {
         echo "Install test failed in docker"
         echo "-------------------"
         exit 1
+    fi
+    if [ $run_exit_status -ne 0 ]; then
+        echo "-------------------"
+        echo "Run test failed in docker"
+        echo "-------------------"
+        exit 1
+    else
+        echo "-------------------"
+        echo "Run test passed in docker"
+        echo "-------------------"
     fi
 }
 
